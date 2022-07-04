@@ -1,7 +1,6 @@
-package storage
+package backend
 
 import(
-	"GoReact/backend"
 	"errors"
 )
 
@@ -12,7 +11,7 @@ type User struct {
 }
 
 func AddUser(user *User) error {
-	_, err := backend.Db.Model(user).Returning("*").Insert()
+	_, err := Db.Model(user).Returning("*").Insert()
 	if err != nil {
 		return err
 	}
@@ -21,7 +20,7 @@ func AddUser(user *User) error {
 
 func Authenticate(username, password string) (*User, error) {
 	user := new(User)
-	if err := backend.Db.Model(user).Where(
+	if err := Db.Model(user).Where(
 		"username = ?", username).Select(); err != nil {
 		return nil, err
 	}

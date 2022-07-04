@@ -4,6 +4,8 @@ go 1.16
 
 require (
 	github.com/gin-gonic/gin v1.7.7
+	github.com/go-pg/migrations/v8 v8.1.0 // indirect
+	github.com/go-pg/pg/v10 v10.10.6 // indirect
 	github.com/go-playground/validator/v10 v10.11.0 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/json-iterator/go v1.1.12 // indirect
